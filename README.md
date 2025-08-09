@@ -1,2 +1,2 @@
 # algos.github.io
-Algoritms, explained and visualized.
+Algorithms, explained and visualized.
