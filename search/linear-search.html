@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search - AlgoVisualizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style> body { font-family: 'Inter', sans-serif; } </style>
+</head>
+<body class="bg-gray-900 text-gray-100 flex">
+    <aside id="sidebar" class="bg-gray-800 w-64 min-h-screen p-4 fixed lg:relative transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out z-30 overflow-y-auto">
+        <div class="text-white text-2xl font-bold mb-10"><a href="/">AlgoVisualizer</a></div>
+        <nav>
+            <h3 class="text-gray-500 text-xs font-bold uppercase mb-2 ml-2">Categories</h3>
+            <ul>
+                <li class="mb-4"><a href="/sorting/" class="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded-lg"><span><i class="fas fa-sort-alpha-down w-6 h-6 mr-3"></i>Sorting</span></a></li>
+                <li class="mb-4"><a href="/search/" class="flex items-center p-2 bg-gray-700 text-white rounded-lg"><span>🧐</span><span class="ml-3">Searching</span></a></li>
+            </ul>
+            <hr class="border-gray-700 my-4">
+            <h3 class="text-gray-500 text-xs font-bold uppercase mb-2 ml-2">Searching Algorithms</h3>
+            <ul>
+                <li class="mb-2"><a href="/search/linear-search.html" class="block p-2 bg-cyan-800 text-white rounded-lg">Linear Search</a></li>
+                <li class="mb-2"><a href="#" class="block p-2 text-gray-300 hover:bg-gray-700 rounded-lg">Binary Search</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="flex-1 flex flex-col min-h-screen">
+        <header class="bg-gray-800/50 backdrop-blur-sm shadow-lg p-4 flex justify-between items-center sticky top-0 z-20">
+            <button id="menu-btn" class="lg:hidden text-white text-2xl z-40"><i class="fas fa-bars"></i></button>
+            <h1 class="text-xl font-semibold text-white">Linear Search</h1>
+            <div></div>
+        </header>
+        <main class="flex-1 p-6 lg:p-10">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1 bg-gray-800 p-6 rounded-xl shadow-2xl">
+                    <h2 class="text-2xl font-bold text-cyan-400 mb-4">How It Works</h2>
+                    <p class="text-gray-300 mb-4">Linear search sequentially checks each element of the list until a match is found or the whole list has been searched.</p>
+                    <h3 class="text-xl font-bold text-cyan-400 mt-6 mb-2">Complexity</h3>
+                    <p class="text-gray-300">Time: <span class="font-mono text-yellow-400">O(n)</span>, Space: <span class="font-mono text-yellow-400">O(1)</span></p>
+                </div>
+                <div class="lg:col-span-2 bg-gray-800 p-6 rounded-xl shadow-2xl">
+                    <h2 class="text-2xl font-bold text-cyan-400 mb-4">Interactive Visualization</h2>
+                    <div class="controls-container bg-gray-700/50 p-4 rounded-lg flex flex-wrap items-center justify-center gap-4 mb-6">
+                        <button id="reset-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition-all"><i class="fas fa-sync-alt mr-2"></i>New Array</button>
+                        <div class="flex items-center gap-2">
+                            <label for="search-input" class="font-semibold">Value to Find:</label>
+                            <input type="number" id="search-input" class="bg-gray-900 text-white w-24 p-2 rounded-lg border-2 border-gray-600 focus:border-cyan-500 focus:outline-none">
+                        </div>
+                        <button id="search-btn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition-all"><i class="fas fa-play mr-2"></i>Start Search</button>
+                    </div>
+                    <div id="visualization-area" class="min-h-[150px] flex items-center justify-center p-4 bg-gray-900 rounded-lg overflow-x-auto"></div>
+                    <div id="status-message" class="mt-4 text-center text-lg font-semibold h-8 transition-all"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden z-20 lg:hidden"></div>
+    <script src="/js/main.js"></script>
+    <script src="/js/linear-search.js"></script>
+</body>
+</html>
